@@ -1,0 +1,21 @@
+{
+  "name": "taj-backend",
+  "version": "1.1.0",
+  "description": "Node.js + Express + PostgreSQL backend for hotel booking app with health check & connection pooling",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "start:backend": "node server.js",
+    "start:frontend": "npm --prefix ../frondend dev",
+    "db:test": "node -e \"require('./src/db').testConnection().then(r => { console.log(JSON.stringify(r, null, 2)); process.exit(r.connected ? 0 : 1); }).catch(e => { console.error(e); process.exit(1); })\"",
+    "db:init": "node -e \"require('./src/db').initDatabase().then(r => { console.log(r.message); process.exit(0); }).catch(e => { console.error(e); process.exit(1); })\""
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "multer": "^2.4.0",
+    "pg": "^8.12.0"
+  }
+}

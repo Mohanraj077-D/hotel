@@ -1,0 +1,17 @@
+{
+  "name": "mohan",
+  "version": "1.0.0",
+  "description": "TAJ hotel booking app - Root workspace",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "scripts": {
+    "start:backend": "npm --prefix backend start",
+    "start:frontend": "npm --prefix frondend dev",
+    "build:frontend": "npm --prefix frondend run build",
+    "lint:frontend": "npm --prefix frondend run lint",
+    "db:test": "npm --prefix backend run db:test",
+    "db:init": "npm --prefix backend run db:init",
+    "test": "npm run db:test && npm run lint:frontend && npm run build:frontend"
+  }
+}
